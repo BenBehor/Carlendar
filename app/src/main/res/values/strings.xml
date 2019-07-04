@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Carlendar</string>
+
+
+    <string-array name="Module">
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+    </string-array>
+</resources>

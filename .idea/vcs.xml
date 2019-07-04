@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Animations" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/CoreDatCRUD" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DeliverMee" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Ovies" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PokeSnakeProject/PokeSnake" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/QRScanner" vcs="Git" />
+  </component>
+</project>

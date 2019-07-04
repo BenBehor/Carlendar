@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/main_layout">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:src="@drawable/logo"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:layout_alignParentTop="true"/>
+
+    <ImageButton
+        android:layout_margin="4dp"
+        android:background="@color/colorTransparent"
+        android:src="@drawable/settings_icon"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/settings_btn"
+        android:text="settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/middle_layout"
+        android:background="@color/colorWhiteTransparent"
+        android:layout_margin="16dp"
+        android:padding="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/logo"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:background="@color/colorGrayTransparent"
+            android:textColor="@color/colorBlack"
+            android:textAlignment="center"
+            android:textSize="16dp"
+            android:text="Got an issue? Here's a video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Spinner
+            android:spinnerMode="dialog"
+            android:id="@+id/spinner2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/middle_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        >
+
+
+        <VideoView
+            android:layout_centerInParent="true"
+            android:id="@+id/video_view"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        </VideoView>
+
+        <ProgressBar
+            android:id="@+id/video_progressbar"
+            android:visibility="invisible"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+
+    <Button
+        android:id="@+id/dashboard_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Dashboard lights"
+        android:layout_above="@id/button"/>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Calendar"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="showDatePicker"
+        android:layout_above="@id/downloadimg"/>
+
+
+
+    <ImageView
+        android:id="@+id/downloadimg"
+        android:src="@drawable/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"/>
+
+
+
+</RelativeLayout>
