@@ -15,7 +15,6 @@ import java.util.List;
 public class FragmentGreen extends Fragment {
 
     private List<RCVItem> listContact = new ArrayList<>();
-    //s
 
     @Nullable
     @Override
