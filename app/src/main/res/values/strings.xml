@@ -1,5 +1,14 @@
 <resources>
     <string name="app_name">Carlendar</string>
+    <string name="vid1"><![CDATA[https://firebasestorage.googleapis.com/v0/b/carlendar-car-calendar.appspot.com/o/videos%2Foilcheck.mp4?alt=media&token=3eda2ddc-0e98-4e52-b3b9-109b5d86b89a]]></string>
+    <string name="vid2"><![CDATA[https://firebasestorage.googleapis.com/v0/b/carlendar-car-calendar.appspot.com/o/videos%2Fchecktire.mp4?alt=media&token=9c01b5df-7d5e-4fcc-9233-33a41463b73c]]></string>
+    <string name="vid3"><![CDATA[https://firebasestorage.googleapis.com/v0/b/carlendar-car-calendar.appspot.com/o/videos%2Fairconditionerissue.mp4?alt=media&token=f319f19b-ee01-4e1b-b999-648e63904853]]></string>
+    <string name="vid4"><![CDATA[https://firebasestorage.googleapis.com/v0/b/carlendar-car-calendar.appspot.com/o/videos%2Fisbatterydead.mp4?alt=media&token=42d740a5-4759-40dc-8267-ca0d675f60b7]]></string>
+    <string name="vid5"><![CDATA[https://firebasestorage.googleapis.com/v0/b/carlendar-car-calendar.appspot.com/o/videos%2Fstartingtrubble.mp4?alt=media&token=c57cfea4-e441-46e0-8253-823b59d0239d]]></string>
+    <string name="vid6"><![CDATA[https://firebasestorage.googleapis.com/v0/b/carlendar-car-calendar.appspot.com/o/videos%2Fstartingtrubble.mp4?alt=media&token=c57cfea4-e441-46e0-8253-823b59d0239d]]></string>
+    <string name="vid7"><![CDATA[https://firebasestorage.googleapis.com/v0/b/carlendar-car-calendar.appspot.com/o/videos%2Fdealingoverheat.mp4?alt=media&token=ccb525b0-698e-4b3f-9f30-3c5718c52d07]]></string>
+    <string name="vid8"><![CDATA[https://firebasestorage.googleapis.com/v0/b/carlendar-car-calendar.appspot.com/o/videos%2Fburningsmell.mp4?alt=media&token=16af2317-c509-470f-ad19-c8aab646f139]]></string>
+    <string name="vid9"><![CDATA[https://firebasestorage.googleapis.com/v0/b/carlendar-car-calendar.appspot.com/o/videos%2Fwhylightson.mp4?alt=media&token=d1da7bbe-4ab3-4545-b2bf-b87776cd3974]]></string>
 
 
     <string-array name="Module">

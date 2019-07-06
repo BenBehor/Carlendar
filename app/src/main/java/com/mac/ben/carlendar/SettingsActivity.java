@@ -25,8 +25,16 @@ public class SettingsActivity extends AppCompatActivity {
     RadioButton defaultTextRadioBtn;
     RadioButton largeTextRadioBtn;
     Spinner carModuleSpinner;
-    SettingsManager settingsManager;
+    MainActivity mMainActivity;
 
+
+    SettingsActivity(MainActivity mainActivity){
+        mMainActivity = mainActivity;
+    }
+
+    SettingsActivity(){
+
+    }
 
 
     @Override
@@ -42,7 +50,8 @@ public class SettingsActivity extends AppCompatActivity {
         largeTextRadioBtn = findViewById(R.id.large_text_radio_btn);
         notificationsToggleBtn.setChecked(true);
         carModuleSpinner = findViewById(R.id.spinner_push);
-        settingsManager = new SettingsManager(this);
+
+
 
         final String[] backgrounds = {"Select Background:", "Winter" , "Cuba XO", "Big City", "Night Vision", "Spring", "Valley", "Default"};
 
@@ -58,7 +67,7 @@ public class SettingsActivity extends AppCompatActivity {
                     case 3: backgroundSelected = R.drawable.background4;break;
                     case 4: backgroundSelected = R.drawable.background5;break;
                     case 5: backgroundSelected = R.drawable.background6;break;
-                        case 6: backgroundSelected = R.drawable.background7;break;
+                    case 6: backgroundSelected = R.drawable.background7;break;
                     case 7: backgroundSelected = R.drawable.background2;break;
                     default: break;
                 }
@@ -89,9 +98,9 @@ public class SettingsActivity extends AppCompatActivity {
                     //  editor.putInt("popup_settings_textsize", 18);
                 }
                 if (carModule != 0){
-                    settingsManager.downloadAndSaveImage(carModule);
+                    MainActivity.settingsManager.downloadAndSaveImage(carModule);
                 }
-                settingsManager.checkPrivateSettings(2);
+                MainActivity.settingsManager.getAppSettings();
             }
         });
 

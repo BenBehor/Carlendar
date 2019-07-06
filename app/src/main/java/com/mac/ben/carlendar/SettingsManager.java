@@ -21,11 +21,14 @@ class SettingsManager{
 
     private SharedPreferences preferences;
     private Context mContext;
+    private MainActivity mMainActivity;
 
-    SettingsManager(Context context){
-        mContext = context;
-        preferences = PreferenceManager.getDefaultSharedPreferences(context);
+    SettingsManager(MainActivity mainActivity){
+        mMainActivity = mainActivity;
+        mContext = mainActivity.getApplicationContext();
+        preferences = PreferenceManager.getDefaultSharedPreferences(mainActivity.getApplicationContext());
     }
+
 
     void downloadAndSaveImage(Integer position) {
         StorageReference ref = FirebaseStorage.getInstance().getReference().child("logos").child(position.toString() + ".png");
@@ -36,12 +39,17 @@ class SettingsManager{
                 Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
                 OutputStream outputStream;
                 File file = new File(Environment.getExternalStorageDirectory() + File.separator + "logo.png");
+                System.out.println("errr + successsssssss" );
 
                 try {
                     outputStream = new FileOutputStream(file);
                     bmp.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
                     outputStream.close(); // do not forget to close the stream
                     MediaStore.Images.Media.insertImage(mContext.getContentResolver(), file.getAbsolutePath(), file.getName(), file.getName());
+
+
+                    MainActivity.settingsManager.mMainActivity.logoImage.setImageBitmap(bmp);
+
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -49,8 +57,6 @@ class SettingsManager{
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putInt("logo_settings", 1);
                 editor.apply();
-
-                checkPrivateSettings(1);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -59,32 +65,20 @@ class SettingsManager{
         });
     }
 
-    void checkPrivateSettings(int whosCallingMe) { // 0 for opening the app. 1 for download image and save only. 2 for saving in settings.
-        switch (whosCallingMe) {
-            case 0:
-                if (preferences.getInt("logo_settings", 0) == 1) {
-                    Bitmap bmImg = BitmapFactory.decodeFile("/storage/emulated/0/logo.png");
-                    MainActivity.imageView.setImageBitmap(bmImg);
-                }
-                if (preferences.getInt("popup_settings", 0) == 1) {
-                    int s = preferences.getInt("popup_settings_bkg", 0);
-                    MainActivity.mainlayout.setBackgroundResource(s);
-                }
-                break;
-            case 1:
-                if (preferences.getInt("logo_settings", 0) == 1) {
-                    Bitmap bmImg = BitmapFactory.decodeFile("/storage/emulated/0/logo.png");
-                    MainActivity.imageView.setImageBitmap(bmImg);
-                }
-                break;
-            case 2:
-                if (preferences.getInt("popup_settings", 0) == 1) {
-                    int s = preferences.getInt("popup_settings_bkg", 0);
-                    MainActivity.mainlayout.setBackgroundResource(s);
-                }
-                break;
-            default: break;
 
+    void getAppSettings(){
+        if (preferences.getInt("logo_settings", 0) == 1) { // 1 for data exist.
+            Bitmap bmImg = BitmapFactory.decodeFile("/storage/emulated/0/logo.png");
+            MainActivity.settingsManager.mMainActivity.logoImage.setImageBitmap(bmImg);
         }
+        if (preferences.getInt("popup_settings", 0) == 1) {
+            int s = preferences.getInt("popup_settings_bkg", 0);
+            MainActivity.settingsManager.mMainActivity.mainLayout.setBackgroundResource(s);
+        }
+        if (preferences.getInt("popup_settings", 0) == 1) {
+            int s = preferences.getInt("popup_settings_bkg", 0);
+            MainActivity.settingsManager.mMainActivity.mainLayout.setBackgroundResource(s);
+        }
+
     }
 }
