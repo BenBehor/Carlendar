@@ -1,4 +1,4 @@
-package com.mac.ben.carlendar;
+package com.mac.ben.carlendar1;
 
 import android.Manifest;
 import android.content.Intent;
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         String[] question1 = {"What do you like to know:", "Check Oil levels", "All about Tire pressure" , "Why is my Air Conditioner low?", "Is my Battery dieing?", "Starting issues", "Prevent Overheating", "Dealing with Overheating", "A Burning smell?", "Why are dashboard lights on?"};
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, question1);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, question1);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner2.setAdapter(adapter);
         spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

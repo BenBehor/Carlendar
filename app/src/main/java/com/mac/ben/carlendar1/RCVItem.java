@@ -1,4 +1,4 @@
-package com.mac.ben.carlendar;
+package com.mac.ben.carlendar1;
 
 public class RCVItem {
     private Integer Image;
@@ -6,21 +6,21 @@ public class RCVItem {
     private String Subtitle;
 
 
-    public RCVItem(Integer image, String title, String subtitle){
+    RCVItem(Integer image, String title, String subtitle){
         Title = title;
         Subtitle = subtitle;
         Image = image;
     }
 
-    public Integer getImage(){
+    Integer getImage(){
         return Image;
     }
 
-    public String getTitle(){
+    String getTitle(){
         return Title;
     }
 
-    public String getSubtitle(){
+    String getSubtitle(){
         return Subtitle;
     }
 

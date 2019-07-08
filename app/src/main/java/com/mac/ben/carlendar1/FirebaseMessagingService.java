@@ -1,7 +1,5 @@
-package com.mac.ben.carlendar;
+package com.mac.ben.carlendar1;
 
-import android.content.Intent;
-import android.os.IBinder;
 import android.util.Log;
 
 import com.google.firebase.messaging.RemoteMessage;

@@ -1,15 +1,13 @@
-package com.mac.ben.carlendar;
+package com.mac.ben.carlendar1;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 import com.google.android.material.tabs.TabLayout;
 
-public class DashboardLightActivity extends AppCompatActivity {
+import java.util.Objects;
 
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
-    private ViewPageAdapter adapter;
+public class DashboardLightActivity extends AppCompatActivity {
 
 
     @Override
@@ -17,9 +15,9 @@ public class DashboardLightActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboardlight);
 
-        tabLayout = findViewById(R.id.tab_layout);
-        viewPager = findViewById(R.id.pager);
-        adapter = new ViewPageAdapter(getSupportFragmentManager());
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        ViewPager viewPager = findViewById(R.id.pager);
+        ViewPageAdapter adapter = new ViewPageAdapter(getSupportFragmentManager());
 
         adapter.AddFragment(new FragmentRed(), "Red");
         adapter.AddFragment(new FragmentYellow(), "Yellow");
@@ -27,9 +25,9 @@ public class DashboardLightActivity extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
-        tabLayout.getTabAt(0).setIcon(R.drawable.warning);
-        tabLayout.getTabAt(1).setIcon(R.drawable.brake_pad_warning_symbol_in_orange);
-        tabLayout.getTabAt(2).setIcon(R.drawable.car_key_symbol_in_green);
+        Objects.requireNonNull(tabLayout.getTabAt(0)).setIcon(R.drawable.warning);
+        Objects.requireNonNull(tabLayout.getTabAt(1)).setIcon(R.drawable.brake_pad_warning_symbol_in_orange);
+        Objects.requireNonNull(tabLayout.getTabAt(2)).setIcon(R.drawable.car_key_symbol_in_green);
 
     }
 

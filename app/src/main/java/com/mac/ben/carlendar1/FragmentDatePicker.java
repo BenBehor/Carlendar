@@ -1,14 +1,18 @@
-package com.mac.ben.carlendar;
+package com.mac.ben.carlendar1;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.widget.DatePicker;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 import java.util.Calendar;
+import java.util.Objects;
 
 public class FragmentDatePicker extends DialogFragment {
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 
@@ -17,7 +21,7 @@ public class FragmentDatePicker extends DialogFragment {
         int month = c.get(Calendar.MONTH);
         int day = c.get(Calendar.DAY_OF_MONTH);
 
-        return new DatePickerDialog(getActivity(), dateSetListener, year, month, day);
+        return new DatePickerDialog(Objects.requireNonNull(getActivity()), dateSetListener, year, month, day);
     }
 
     private DatePickerDialog.OnDateSetListener dateSetListener =

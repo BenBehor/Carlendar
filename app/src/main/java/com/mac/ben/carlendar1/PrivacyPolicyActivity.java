@@ -1,4 +1,4 @@
-package com.mac.ben.carlendar;
+package com.mac.ben.carlendar1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,8 +12,7 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy_policy);
-        web =(WebView)findViewById(R.id.
-                webView);
-        web.loadUrl("https://firebasestorage.googleapis.com/v0/b/carlendar-car-calendar.appspot.com/o/privacy_policy.md?alt=media&token=70979bd6-6780-4a64-9513-ae5b9acd8ffa");
+        web =findViewById(R.id.webView);
+        web.loadUrl("https://firebasestorage.googleapis.com/v0/b/carlendar-1.appspot.com/o/privacy_policy.md?alt=media&token=d34f9cf7-8c54-4f0e-a8bc-7cabeb097eca");
     }
 }

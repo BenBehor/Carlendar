@@ -1,4 +1,4 @@
-package com.mac.ben.carlendar;
+package com.mac.ben.carlendar1;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -59,7 +59,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         final String[] backgrounds = {"Select Background:", "Winter" , "Cuba XO", "Big City", "Night Vision", "Spring", "Valley", "Default"};
 
-        ArrayAdapter<String> bkgSpinnerAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, backgrounds);
+        ArrayAdapter<String> bkgSpinnerAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, backgrounds);
         bkgSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         backgroundSpinner.setAdapter(bkgSpinnerAdapter);
         backgroundSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -113,7 +113,7 @@ public class SettingsActivity extends AppCompatActivity {
                 "Lamborghini", "Maserati", "Mazda", "Mercedes-Benz", "MG", "MINI", "Mitsubishi", "Nissan", "Opel", "Porsche", "Peugeot", "Renault", "Rolls Royce",
                 "Subaru","Suzuki", "Seat", "Skoda", "Toyota", "Volkswagen", "Volvo"};
 
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(SettingsActivity.this, android.R.layout.simple_list_item_1, modules);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<>(SettingsActivity.this, android.R.layout.simple_list_item_1, modules);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         carModuleSpinner.setAdapter(adapter1);
         carModuleSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

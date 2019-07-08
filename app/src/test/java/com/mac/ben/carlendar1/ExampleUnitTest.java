@@ -1,6 +1,6 @@
-package com.mac.ben.carlendar;
+package com.mac.ben.carlendar1;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
