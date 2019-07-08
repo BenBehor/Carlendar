@@ -8,7 +8,7 @@ import android.widget.Toast;
 import androidx.fragment.app.DialogFragment;
 import java.util.Calendar;
 
-public class MyDatePickerFragment extends DialogFragment {
+public class FragmentDatePicker extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
 

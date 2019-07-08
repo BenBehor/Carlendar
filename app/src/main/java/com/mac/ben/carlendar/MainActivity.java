@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showDatePicker(View v) {
-        DialogFragment newFragment = new MyDatePickerFragment();
+        DialogFragment newFragment = new FragmentDatePicker();
         newFragment.show(getSupportFragmentManager(), "date picker");
     }
 

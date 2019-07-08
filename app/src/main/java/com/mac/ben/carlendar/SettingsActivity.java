@@ -1,5 +1,6 @@
 package com.mac.ben.carlendar;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.os.Bundle;
@@ -20,12 +21,14 @@ public class SettingsActivity extends AppCompatActivity {
     int backgroundSelected;
     int carModule;
     Button applySettingsBtn;
+    Button privacyPolicyBtn;
     SharedPreferences preferences;
     ToggleButton notificationsToggleBtn;
     RadioButton defaultTextRadioBtn;
     RadioButton largeTextRadioBtn;
     Spinner carModuleSpinner;
     MainActivity mMainActivity;
+
 
 
     SettingsActivity(MainActivity mainActivity){
@@ -50,6 +53,7 @@ public class SettingsActivity extends AppCompatActivity {
         largeTextRadioBtn = findViewById(R.id.large_text_radio_btn);
         notificationsToggleBtn.setChecked(true);
         carModuleSpinner = findViewById(R.id.spinner_push);
+        privacyPolicyBtn = findViewById(R.id.privacy_policy_btn);
 
 
 
@@ -120,6 +124,16 @@ public class SettingsActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) { }
+        });
+
+        privacyPolicyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),
+                        PrivacyPolicyActivity.class);
+                startActivity(intent);
+            }
+
         });
     }
 }
