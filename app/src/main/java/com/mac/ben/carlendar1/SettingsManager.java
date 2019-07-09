@@ -7,6 +7,9 @@ import android.graphics.BitmapFactory;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
 import androidx.annotation.NonNull;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -80,5 +83,14 @@ class SettingsManager{
             MainActivity.settingsManager.mMainActivity.mainLayout.setBackgroundResource(s);
         }
 
+
+        //Coding is fun, go crazy! :D
+        Animation anim = AnimationUtils.loadAnimation(mMainActivity,R.anim.shake);
+        mMainActivity.logoImage.startAnimation(anim);
+        mMainActivity.dashboardBtn.startAnimation(anim);
+        mMainActivity.settingsBtn.startAnimation(anim);
+        mMainActivity.spinnerVideos.startAnimation(anim);
+        mMainActivity.calendarBtn.startAnimation(anim);
+        mMainActivity.mainLayout.startAnimation(anim);
     }
 }

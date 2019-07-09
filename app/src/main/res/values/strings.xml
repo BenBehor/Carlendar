@@ -9,6 +9,10 @@
     <string name="vid7"><![CDATA[https://firebasestorage.googleapis.com/v0/b/carlendar\-1.appspot.com/o/videos%2Fdealingoverheat.mp4?alt=media&token=baaa011a\-312f\-4cbb\-9a01\-1a70e03b64ac]]></string>
     <string name="vid8"><![CDATA[https://firebasestorage.googleapis.com/v0/b/carlendar\-1.appspot.com/o/videos%2Fburningsmell.mp4?alt=media&token=373c4397\-424f\-4633\-a61e\-9d5d7f2ffb30]]></string>
     <string name="vid9"><![CDATA[https://firebasestorage.googleapis.com/v0/b/carlendar\-car\-calendar.appspot.com/o/videos%2Fwhylightson.mp4?alt=media&token=d1da7bbe\-4ab3\-4545\-b2bf\-b87776cd3974]]></string>
+    <string name="got_an_issue_here_s_a_video">Got an issue? Here\'s a video</string>
+    <string name="dashboard_lights">Dashboard lights</string>
+    <string name="my_calendar">My Calendar</string>
+    <string name="avoid_warnings_description">avoid_warnings_description</string>
 
     <string-array name="Module">
         <item>1</item>

@@ -7,6 +7,8 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -30,23 +32,20 @@ public class MainActivity extends AppCompatActivity {
      ImageView logoImage;
      RelativeLayout mainLayout;
      static SettingsManager settingsManager;
+     Button dashboardBtn;
+     ImageButton settingsBtn;
+     Spinner spinnerVideos;
+     Button calendarBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Spinner spinner2 = findViewById(R.id.spinner2);
-        videoView = findViewById(R.id.video_view);
-        videoLoadingBar = findViewById(R.id.video_progressbar);
-        logoImage =  findViewById(R.id.downloadimg);
-        mainLayout = findViewById(R.id.main_layout);
-        settingsManager = new SettingsManager(this);
+        initViews();
 
-        Button dashboardBtn = findViewById(R.id.dashboard_btn);
-        ImageButton settingsBtn = findViewById(R.id.settings_btn);
 
-        videoView.setVisibility(View.INVISIBLE);
+
 
         if (!checkIfAlreadyhavePermission()) {
             requestForSpecificPermission();
@@ -58,14 +57,15 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, question1);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapter);
-        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spinnerVideos.setAdapter(adapter);
+        spinnerVideos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
                 if (position != 0) {
                     String path = "";
                     videoLoadingBar.setVisibility(View.VISIBLE);
+                    videoView.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,R.anim.bounce));
                     switch (position) {
                         case 1: path = getString(R.string.vid1);break;
                         case 2: path = getString(R.string.vid2);break;
@@ -110,8 +110,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                v.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,R.anim.rotate));
             }
         });
+    }
+
+    private void initViews() {
+        videoView = findViewById(R.id.video_view);
+        videoLoadingBar = findViewById(R.id.video_progressbar);
+        logoImage =  findViewById(R.id.downloadimg);
+        mainLayout = findViewById(R.id.main_layout);
+        settingsManager = new SettingsManager(this);
+        dashboardBtn = findViewById(R.id.dashboard_btn);
+        settingsBtn = findViewById(R.id.settings_btn);
+        videoView.setVisibility(View.INVISIBLE);
+        spinnerVideos = findViewById(R.id.spinner_videos);
+        calendarBtn = findViewById(R.id.calendar_btn);
+
     }
 
     public void showDatePicker(View v) {

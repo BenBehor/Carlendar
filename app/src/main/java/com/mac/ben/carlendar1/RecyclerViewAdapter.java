@@ -5,6 +5,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -48,6 +50,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         myViewHolder.imageIv.setImageResource(mData.get(i).getImage());
         myViewHolder.titleTv.setText(mData.get(i).getTitle());
         myViewHolder.subtitleTv.setText(mData.get(i).getSubtitle());
+
+        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Animation anim = AnimationUtils.loadAnimation(mContext,R.anim.blink_anim);
+                view.startAnimation(anim);
+            }
+        });
     }
 
     @Override
@@ -69,4 +79,5 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             subtitleTv = itemView.findViewById(R.id.rcv_item_subtitle);
         }
     }
+
 }
