@@ -27,18 +27,6 @@ public class SettingsActivity extends AppCompatActivity {
     RadioButton defaultTextRadioBtn;
     RadioButton largeTextRadioBtn;
     Spinner carModuleSpinner;
-    MainActivity mMainActivity;
-
-
-
-    SettingsActivity(MainActivity mainActivity){
-        mMainActivity = mainActivity;
-    }
-
-    SettingsActivity(){
-
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
