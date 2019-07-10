@@ -20,9 +20,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private List<RCVItem> mData;
 
     RecyclerViewAdapter(Context context, List<RCVItem> listContact, Integer color) {
-        mColor = color;
         mContext = context;
         mData = listContact;
+
+             switch (color){
+            case 1:
+                mColor = R.color.colorRed;
+                break;
+            case 2:
+                mColor = R.color.colorYellow;
+                break;
+            default:
+                mColor = R.color.colorGreen;
+                break;
+        }
+
     }
 
     @SuppressLint("ResourceAsColor")
@@ -31,17 +43,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v;
         v = LayoutInflater.from(mContext).inflate(R.layout.item_rcv, viewGroup,false);
-        switch (mColor){
-            case 1:
-                v.setBackgroundResource(R.color.colorRed);
-                break;
-            case 2:
-                v.setBackgroundResource(R.color.colorYellow);
-                break;
-            default:
-                v.setBackgroundResource(R.color.colorGreen);
-                break;
-        }
+        v.setBackgroundResource(mColor);
         return new MyViewHolder(v);
     }
 
@@ -50,7 +52,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         myViewHolder.imageIv.setImageResource(mData.get(i).getImage());
         myViewHolder.titleTv.setText(mData.get(i).getTitle());
         myViewHolder.subtitleTv.setText(mData.get(i).getSubtitle());
-
         myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

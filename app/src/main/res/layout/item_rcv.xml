@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="wrap_content"
-    android:background="@color/colorRed"
     android:layout_margin="2dp"
     android:id="@+id/parent_layout">
 
-   <RelativeLayout
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content">
 
          <ImageView
              android:id="@+id/rcv_item_iv"
@@ -18,7 +14,8 @@
              android:background="@color/colorGrayTransparent"
              android:src="@drawable/warning"
              android:layout_width="70dp"
-             android:layout_height="70dp" />
+             android:layout_height="70dp"
+             android:contentDescription="@string/avoid_warnings_description"/>
 
          <TextView
              android:layout_toEndOf="@id/rcv_item_iv"
@@ -34,5 +31,4 @@
              android:id="@+id/rcv_item_subtitle"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content" />
-   </RelativeLayout>
-</LinearLayout>
+</RelativeLayout>
