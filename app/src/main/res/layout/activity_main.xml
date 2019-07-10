@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@drawable/background"
+    android:background="@mipmap/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
@@ -82,25 +82,44 @@
 
 
 
-    <Button
-        android:id="@+id/dashboard_btn"
+        <Button
+            android:id="@+id/dashboard_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dashboard_lights"
+            android:drawableEnd="@drawable/dashboard_button_icon"
+            android:drawableStart="@drawable/dashboard_button_icon"
+            android:layout_above="@+id/buttons_layout"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/downloadimg"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/dashboard_lights"
-        android:layout_above="@id/calendar_btn"/>
+        android:layout_marginEnd="16dp">
 
-    <Button
-        android:id="@+id/calendar_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/my_calendar"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:onClick="showDatePicker"
-        android:layout_above="@id/downloadimg"/>
+        <Button
+            android:id="@+id/calendar_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableStart="@drawable/calendar_button_icon"
+            android:text="@string/my_calendar" />
 
+        <Button
+            android:id="@+id/store_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/soon_store"
+            android:drawableEnd="@drawable/store_button_icon" />
+
+
+    </LinearLayout>
 
 
     <ImageView

@@ -6,8 +6,6 @@ import android.preference.PreferenceManager;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -68,13 +66,13 @@ public class SettingsActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 switch(position) {
-                    case 1: backgroundSelected = R.drawable.background; break;
-                    case 2: backgroundSelected = R.drawable.background3;break;
-                    case 3: backgroundSelected = R.drawable.background4;break;
-                    case 4: backgroundSelected = R.drawable.background5;break;
-                    case 5: backgroundSelected = R.drawable.background6;break;
-                    case 6: backgroundSelected = R.drawable.background7;break;
-                    case 7: backgroundSelected = R.drawable.background2;break;
+                    case 1: backgroundSelected = R.mipmap.background; break;
+                    case 2: backgroundSelected = R.mipmap.background3;break;
+                    case 3: backgroundSelected = R.mipmap.background4;break;
+                    case 4: backgroundSelected = R.mipmap.background5;break;
+                    case 5: backgroundSelected = R.mipmap.background6;break;
+                    case 6: backgroundSelected = R.mipmap.background7;break;
+                    case 7: backgroundSelected = R.mipmap.background2;break;
 
                     default: break;
                 }

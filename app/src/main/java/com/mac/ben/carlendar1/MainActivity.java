@@ -7,7 +7,6 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -36,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
      ImageButton settingsBtn;
      Spinner spinnerVideos;
      Button calendarBtn;
+     Button storeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +113,16 @@ public class MainActivity extends AppCompatActivity {
                 v.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,R.anim.rotate));
             }
         });
+
+
+
+        calendarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DialogFragment newFragment = new FragmentDatePicker();
+                newFragment.show(getSupportFragmentManager(), "date picker");
+            }
+        });
     }
 
     private void initViews() {
@@ -126,12 +136,8 @@ public class MainActivity extends AppCompatActivity {
         videoView.setVisibility(View.INVISIBLE);
         spinnerVideos = findViewById(R.id.spinner_videos);
         calendarBtn = findViewById(R.id.calendar_btn);
+        storeBtn = findViewById(R.id.store_btn);
 
-    }
-
-    public void showDatePicker(View v) {
-        DialogFragment newFragment = new FragmentDatePicker();
-        newFragment.show(getSupportFragmentManager(), "date picker");
     }
 
     private boolean checkIfAlreadyhavePermission() {

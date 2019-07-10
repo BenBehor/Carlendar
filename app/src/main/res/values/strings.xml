@@ -13,6 +13,7 @@
     <string name="dashboard_lights">Dashboard lights</string>
     <string name="my_calendar">My Calendar</string>
     <string name="avoid_warnings_description">avoid_warnings_description</string>
+    <string name="soon_store">Soon, Store</string>
 
     <string-array name="Module">
         <item>1</item>

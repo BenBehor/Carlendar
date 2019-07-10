@@ -21,6 +21,7 @@ public class FragmentGreen extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.frag_green, container, false);
         RecyclerView myRecyclerView = v.findViewById(R.id.recycler_view_green);
+        myRecyclerView.setHasFixedSize(true); //to improve performance.
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),listContact, 3);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         myRecyclerView.setAdapter(recyclerViewAdapter);

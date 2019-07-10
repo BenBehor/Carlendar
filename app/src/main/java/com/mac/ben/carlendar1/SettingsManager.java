@@ -91,6 +91,7 @@ class SettingsManager{
         mMainActivity.settingsBtn.startAnimation(anim);
         mMainActivity.spinnerVideos.startAnimation(anim);
         mMainActivity.calendarBtn.startAnimation(anim);
+        mMainActivity.storeBtn.startAnimation(anim);
         mMainActivity.mainLayout.startAnimation(anim);
     }
 }
