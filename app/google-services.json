@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "453046378638",
+    "firebase_url": "https://carlendar-1.firebaseio.com",
+    "project_id": "carlendar-1",
+    "storage_bucket": "carlendar-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:453046378638:android:446dedf0c3ee5173",
+        "android_client_info": {
+          "package_name": "com.mac.ben.carlendar1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "453046378638-b10ab1m38un79igq3r23pgr7ivq4bh9i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mac.ben.carlendar1",
+            "certificate_hash": "0d9ba08ee3f5f4b2ede77cc6b8bfd05a6cd3efbd"
+          }
+        },
+        {
+          "client_id": "453046378638-nu9gt57qa4s2orcu193muasl01h466ml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaEA8pUEdiNKAqyErTxz9Fyym8Mi-OWeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "453046378638-nu9gt57qa4s2orcu193muasl01h466ml.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
