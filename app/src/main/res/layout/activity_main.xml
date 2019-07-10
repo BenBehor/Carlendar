@@ -9,10 +9,10 @@
     android:id="@+id/main_layout">
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/car_module_iv"
         android:src="@drawable/logo"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
         android:layout_marginTop="8dp"
         android:padding="8dp"
         android:layout_alignParentTop="true"
@@ -30,14 +30,15 @@
 
     <LinearLayout
         android:id="@+id/middle_layout"
-        android:background="@color/colorWhiteTransparent"
         android:layout_margin="16dp"
         android:padding="2dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@id/logo"
-        android:layout_centerInParent="true">
+        android:layout_below="@id/car_module_iv"
+        android:layout_centerInParent="true"
+        style="@style/Button"
+        android:background="@drawable/primary_round_transperant">
 
         <TextView
             android:background="@color/colorGrayTransparent"
@@ -90,17 +91,18 @@
             android:drawableEnd="@drawable/dashboard_button_icon"
             android:drawableStart="@drawable/dashboard_button_icon"
             android:layout_above="@+id/buttons_layout"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"/>
+            style="@style/Button"
+            android:layout_margin="8dp"
+            android:background="@drawable/primary_round"/>
 
     <LinearLayout
         android:id="@+id/buttons_layout"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/downloadimg"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp">
+        android:layout_above="@id/car_module_iv"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
 
         <Button
             android:id="@+id/calendar_btn"
@@ -108,7 +110,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawableStart="@drawable/calendar_button_icon"
-            android:text="@string/my_calendar" />
+            android:text="@string/my_calendar"
+            style="@style/Button"
+            android:background="@drawable/primary_round"/>
 
         <Button
             android:id="@+id/store_btn"
@@ -116,14 +120,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/soon_store"
-            android:drawableEnd="@drawable/store_button_icon" />
+            android:drawableEnd="@drawable/store_button_icon"
+            style="@style/Button"
+            android:background="@drawable/primary_round"/>
 
 
     </LinearLayout>
 
 
     <ImageView
-        android:id="@+id/downloadimg"
+        android:id="@+id/logo"
         android:src="@drawable/logo"
         android:layout_width="wrap_content"
         android:layout_height="100dp"

@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         videoView = findViewById(R.id.video_view);
         videoLoadingBar = findViewById(R.id.video_progressbar);
-        logoImage =  findViewById(R.id.downloadimg);
+        logoImage =  findViewById(R.id.car_module_iv);
         mainLayout = findViewById(R.id.main_layout);
         settingsManager = new SettingsManager(this);
         dashboardBtn = findViewById(R.id.dashboard_btn);

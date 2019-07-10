@@ -8,10 +8,15 @@
     <color name="colorBackground">#E8EBE4BA</color>
     <color name="colorLightGray">#C9C9C9</color>
 
+    <color name="colorButton">#EBDA6E</color>
+    <color name="colorButtonPressed">#9CD15F</color>
+    <color name="colorButtonText">#000000</color>
+    <color name="colorSpinner">#BFF5B868</color>
+
 
 
     <color name="colorTransparent">#00FFFFFF</color>
     <color name="colorGrayTransparent">#BF616161</color>
     <color name="colorWhiteTransparent">#80FFFFFF</color>
-    <color name="colorSettingsTransparent">#E6E2E2E2</color>
+    <color name="colorSettingsTransparent">#00FFFFFF</color>
 </resources>

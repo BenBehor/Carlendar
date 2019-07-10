@@ -11,5 +11,15 @@
         <item name="android:windowBackground">@color/colorSettingsTransparent</item>
     </style>
 
-
+    <!-- Button style-->
+    <style name="Button">
+        <item name="android:textColor">@color/colorButtonText</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:elevation">1dp</item>
+        <item name="android:translationZ">1dp</item>
+        <item name="android:background">@color/colorRed</item>
+    </style>
 </resources>

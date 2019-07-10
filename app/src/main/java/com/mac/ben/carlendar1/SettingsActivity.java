@@ -31,7 +31,7 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_popup);
+        setContentView(R.layout.activity_settings);
 
         backgroundSpinner = findViewById(R.id.background_spinner);
         applySettingsBtn = findViewById(R.id.apply_settings_btn);

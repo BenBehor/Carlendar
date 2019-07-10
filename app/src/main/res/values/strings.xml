@@ -14,6 +14,11 @@
     <string name="my_calendar">My Calendar</string>
     <string name="avoid_warnings_description">avoid_warnings_description</string>
     <string name="soon_store">Soon, Store</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="apply_settings">Apply Settings</string>
+    <string name="text_size">Text Size:</string>
+    <string name="default1">Default</string>
+    <string name="push_notifications">Push Notifications:</string>
 
     <string-array name="Module">
         <item>1</item>
