@@ -114,13 +114,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
         calendarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DialogFragment newFragment = new FragmentDatePicker();
                 newFragment.show(getSupportFragmentManager(), "date picker");
+            }
+        });
+        storeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, StoreActivity.class));
             }
         });
     }

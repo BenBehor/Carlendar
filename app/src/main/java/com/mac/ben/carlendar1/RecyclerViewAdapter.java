@@ -24,15 +24,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         mData = listContact;
 
              switch (color){
-            case 1:
-                mColor = R.color.colorRed;
-                break;
-            case 2:
-                mColor = R.color.colorYellow;
-                break;
-            default:
-                mColor = R.color.colorGreen;
-                break;
+            case 1: mColor = R.color.colorRed; break;
+            case 2: mColor = R.color.colorYellow; break;
+            case 3: mColor = R.color.colorGreen; break;
+                default: mColor = R.color.colorGray; break;
         }
 
     }
@@ -59,6 +54,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 view.startAnimation(anim);
             }
         });
+
+
+        //Create a code that opens a small box with details about the light issue OR a weblink to amazing for store
     }
 
     @Override

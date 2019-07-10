@@ -10,7 +10,7 @@
          <ImageView
              android:id="@+id/rcv_item_iv"
              android:layout_margin="4dp"
-             android:padding="16dp"
+             android:padding="8dp"
              android:background="@color/colorGrayTransparent"
              android:src="@drawable/warning"
              android:layout_width="70dp"

@@ -19,8 +19,8 @@ public class FragmentYellow extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.frag_yellow, container, false);
-        RecyclerView myRecyclerView = v.findViewById(R.id.recycler_view_yellow);
+        View v = inflater.inflate(R.layout.frag_dashboard, container, false);
+        RecyclerView myRecyclerView = v.findViewById(R.id.recycler_view_dashboard);
         myRecyclerView.setHasFixedSize(true); //to improve performance.
         RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(getContext(),listContact, 2);
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
