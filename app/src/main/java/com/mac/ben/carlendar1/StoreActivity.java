@@ -21,15 +21,13 @@ public class StoreActivity extends AppCompatActivity {
         ViewPager viewPager = findViewById(R.id.pager);
         ViewPageAdapter adapter = new ViewPageAdapter(getSupportFragmentManager());
 
-        adapter.AddFragment(new FragmentStore(), "Some items");
-        adapter.AddFragment(new FragmentStore(), "Parts");
-        adapter.AddFragment(new FragmentStore(), "Life Saver!");
+        adapter.AddFragment(new AmazonStore(), "Amazon");
+        adapter.AddFragment(new EbayStore(), "Ebay");
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
-        Objects.requireNonNull(tabLayout.getTabAt(0)).setIcon(R.drawable.warning);
-        Objects.requireNonNull(tabLayout.getTabAt(1)).setIcon(R.drawable.brake_pad_warning_symbol_in_orange);
-        Objects.requireNonNull(tabLayout.getTabAt(2)).setIcon(R.drawable.car_key_symbol_in_green);
+        Objects.requireNonNull(tabLayout.getTabAt(0)).setIcon(R.drawable.amazon_logo);
+        Objects.requireNonNull(tabLayout.getTabAt(1)).setIcon(R.drawable.ebay_logo);
 
     }
 

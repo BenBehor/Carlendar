@@ -1,34 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp">
+
+
+
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="wrap_content"
     android:layout_margin="2dp"
-    android:id="@+id/parent_layout">
+    android:id="@+id/parent_layout"
+    android:layout_weight="1">
 
+    <ImageView
+        android:id="@+id/rcv_item_iv"
+        android:layout_margin="4dp"
+        android:padding="8dp"
+        android:background="@color/colorGrayTransparent"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:contentDescription="@string/avoid_warnings_description"/>
 
-         <ImageView
-             android:id="@+id/rcv_item_iv"
-             android:layout_margin="4dp"
-             android:padding="8dp"
-             android:background="@color/colorGrayTransparent"
-             android:src="@drawable/warning"
-             android:layout_width="70dp"
-             android:layout_height="70dp"
-             android:contentDescription="@string/avoid_warnings_description"/>
+    <TextView
+        android:layout_toEndOf="@id/rcv_item_iv"
+        android:id="@+id/rcv_item_title"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-         <TextView
-             android:layout_toEndOf="@id/rcv_item_iv"
-             android:id="@+id/rcv_item_title"
-             android:textStyle="bold"
-             android:textSize="16sp"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content" />
-
-         <TextView
-             android:layout_toEndOf="@id/rcv_item_iv"
-             android:layout_below="@id/rcv_item_title"
-             android:id="@+id/rcv_item_subtitle"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content" />
+    <TextView
+        android:layout_toEndOf="@id/rcv_item_iv"
+        android:layout_below="@id/rcv_item_title"
+        android:id="@+id/rcv_item_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/parent_list_item_expand_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="4dp"
+        android:src="@android:drawable/ic_menu_send"
+        android:background="@color/colorTransparent"
+        android:layout_weight="1"
+        android:contentDescription="@string/avoid_warnings_description"/>
+
+
+
+</LinearLayout>

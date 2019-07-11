@@ -42,8 +42,6 @@ class SettingsManager{
                 Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
                 OutputStream outputStream;
                 File file = new File(Environment.getExternalStorageDirectory() + File.separator + "logo.png");
-                System.out.println("errr + successsssssss" );
-
                 try {
                     outputStream = new FileOutputStream(file);
                     bmp.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
@@ -56,7 +54,6 @@ class SettingsManager{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putInt("logo_settings", 1);
                 editor.apply();
@@ -83,15 +80,7 @@ class SettingsManager{
             MainActivity.settingsManager.mMainActivity.mainLayout.setBackgroundResource(s);
         }
 
-
-        //Coding is fun, go crazy! :D
-        Animation anim = AnimationUtils.loadAnimation(mMainActivity,R.anim.shake);
-        mMainActivity.logoImage.startAnimation(anim);
+        Animation anim = AnimationUtils.loadAnimation(mMainActivity,R.anim.spin_out_in);
         mMainActivity.dashboardBtn.startAnimation(anim);
-        mMainActivity.settingsBtn.startAnimation(anim);
-        mMainActivity.spinnerVideos.startAnimation(anim);
-        mMainActivity.calendarBtn.startAnimation(anim);
-        mMainActivity.storeBtn.startAnimation(anim);
-        mMainActivity.mainLayout.startAnimation(anim);
     }
 }

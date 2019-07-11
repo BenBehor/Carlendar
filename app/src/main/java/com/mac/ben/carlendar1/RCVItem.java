@@ -4,12 +4,14 @@ public class RCVItem {
     private Integer Image;
     private String Title;
     private String Subtitle;
+    private String Extra;
 
 
-    RCVItem(Integer image, String title, String subtitle){
+    RCVItem(Integer image, String title, String subtitle, String extra){
         Title = title;
         Subtitle = subtitle;
         Image = image;
+        Extra = extra;
     }
 
     Integer getImage(){
@@ -24,6 +26,10 @@ public class RCVItem {
         return Subtitle;
     }
 
+    String getExtra(){
+        return Extra;
+    }
+
     public void setImage(Integer image){
         Image = image;
     }
@@ -34,6 +40,10 @@ public class RCVItem {
 
     public void setSubtitle(String subtitle){
         Subtitle = subtitle;
+    }
+
+    public void setExtra(String extra){
+        Extra = extra;
     }
 
 

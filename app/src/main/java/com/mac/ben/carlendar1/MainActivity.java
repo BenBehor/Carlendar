@@ -89,12 +89,18 @@ public class MainActivity extends AppCompatActivity {
                     videoView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            if (videoView.isPlaying()) { videoView.pause(); } else { videoView.start(); }
+                            if (videoView.isPlaying()) {
+                                videoView.pause();
+                            } else {
+                                videoView.start();
+
+                            }
                         }
                     });
                     videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         @Override
-                        public void onCompletion(MediaPlayer mediaPlayer) { videoView.setVisibility(View.INVISIBLE); }}); } }
+                        public void onCompletion(MediaPlayer mediaPlayer) {
+                        }}); } }
             @Override
             public void onNothingSelected(AdapterView<?> parentView) { }
         });
@@ -110,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-                v.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,R.anim.rotate));
+                v.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,R.anim.spin));
             }
         });
 

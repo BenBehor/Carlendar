@@ -33,22 +33,22 @@ public class FragmentYellow extends Fragment {
         super.onCreate(savedInstanceState);
 
         listContact = new ArrayList<>();
-        listContact.add(new RCVItem(R.drawable.low_screen_wash_fluid_symbol_in_orange,"Washer Fluid","Indicates that the vehicle is low on screen wash fluid."));
-        listContact.add(new RCVItem(R.drawable.engine_check_symbol_in_orange,"Engine Check","Indicates that the main beam / full beam headlights are on"));
-        listContact.add(new RCVItem(R.drawable.engine_check_symbol_in_orange_1,"Engine Check","Indicates fault with engine."));
-        listContact.add(new RCVItem(R.drawable.electric_charging_symbol_in_orange,"Electric Charging","Indicates that the vehicle is connected to electrical charging station"));
-        listContact.add(new RCVItem(R.drawable.charging_symbol_in_orange,"Charging","Indicates that the vehicle is connected to electrical charging station"));
-        listContact.add(new RCVItem(R.drawable.warning_symbol_in_orange,"Warning","Indicates a warning"));
-        listContact.add(new RCVItem(R.drawable.pcs_symbol_in_orange,"PCS","Indicates a fault with the vehicle PCS system."));
-        listContact.add(new RCVItem(R.drawable.tranmission_warning_symbol_in_orange,"Transmission","Indicates a fault with the transmission / gearbox."));
-        listContact.add(new RCVItem(R.drawable.service_indicator_symbol_in_orange,"Service","Indicates that the vehicle is due for a service."));
-        listContact.add(new RCVItem(R.drawable.jack__ramp_symbol_in_orange,"Jack / Ramp","Indicaes that the vehicle is on a ramp / jack system"));
-        listContact.add(new RCVItem(R.drawable.low_engine_oil_symbol_in_orange,"Low Engine Oil","Indicates low engine oil."));
-        listContact.add(new RCVItem(R.drawable.at_oil_temp_symbol_in_orange,"A/T Oil Temp","Indicates that the automatic transmission oil termperature is high."));
-        listContact.add(new RCVItem(R.drawable.information_symbol_in_orange,"Indicates an issue that requires attention.","Navigate the vehicles onboard computer / information to identify the issue and address accordingly."));
-        listContact.add(new RCVItem(R.drawable.oil_level_symbol_in_orange,"Oil Level","Indicates the oil level is outside of the recommended parameters."));
-        listContact.add(new RCVItem(R.drawable.warning_symbol_in_orange_1,"Warning","Indicates a warning"));
-        listContact.add(new RCVItem(R.drawable.side_air_bag_symbol_in_orange,"Side air bag","Indicates a fault with the side air bag."));
-        listContact.add(new RCVItem(R.drawable.warning_symbol_in_orange,"To be continued:","more data will be updated soon")); // so far 2 lines.
+        listContact.add(new RCVItem(R.drawable.low_screen_wash_fluid_symbol_in_orange,"Washer Fluid","Indicates that the vehicle is low on screen wash fluid.","Top up screen wash as soon as possible to maintain ability to keep windscreen clear."));
+        listContact.add(new RCVItem(R.drawable.engine_check_symbol_in_orange,"Engine Check","Indicates that the main beam / full beam headlights are on","Use main / full beam when appropriate taking precautions not to dazzle on coming drivers."));
+        listContact.add(new RCVItem(R.drawable.engine_check_symbol_in_orange_1,"Engine Check","Indicates fault with engine.","Stop the vehicle when safe to do so and seek assistance / diagnosis."));
+        listContact.add(new RCVItem(R.drawable.electric_charging_symbol_in_orange,"Electric Charging","Indicates that the vehicle is connected to electrical charging station","Disconnect from the charging station when appropriate."));
+        listContact.add(new RCVItem(R.drawable.charging_symbol_in_orange,"Charging","Indicates that the vehicle is connected to electrical charging station","Disconnect from charging station when required."));
+        listContact.add(new RCVItem(R.drawable.warning_symbol_in_orange,"Warning","Indicates a warning","Navigate the cars on board computer / information system to identify the fault and address accordingly."));
+        listContact.add(new RCVItem(R.drawable.pcs_symbol_in_orange,"PCS","Indicates a fault with the vehicle PCS system.","Stop the car when safe to do and seek breakdown assistance / diagnosis."));
+        listContact.add(new RCVItem(R.drawable.tranmission_warning_symbol_in_orange,"Transmission","Indicates a fault with the transmission / gearbox.","Stop the vehicle when safe to do so and seek assistance / diagnosis."));
+        listContact.add(new RCVItem(R.drawable.service_indicator_symbol_in_orange,"Service","Indicates that the vehicle is due for a service.","Contact service centre to book scheduled maintenance."));
+        listContact.add(new RCVItem(R.drawable.jack__ramp_symbol_in_orange,"Jack / Ramp","Indicaes that the vehicle is on a ramp / jack system","No action required."));
+        listContact.add(new RCVItem(R.drawable.low_engine_oil_symbol_in_orange,"Low Engine Oil","Indicates low engine oil.","Check engine oil level and top up with correct specification oil as required. Running the engine with low engine oil can cause significant damage to the engine."));
+        listContact.add(new RCVItem(R.drawable.at_oil_temp_symbol_in_orange,"A/T Oil Temp","Indicates that the automatic transmission oil temperature is high.","Seek assistance / diagnosis asap as could result in significant damage to the automatic transmission."));
+        listContact.add(new RCVItem(R.drawable.information_symbol_in_orange,"Indicates an issue that requires attention.","Navigate the vehicles on board computer / information to identify the issue and address accordingly.","Navigate the vehicles onboard computer / information to identify the issue and address accordingly."));
+        listContact.add(new RCVItem(R.drawable.oil_level_symbol_in_orange,"Oil Level","Indicates the oil level is outside of the recommended parameters.","Check engine oil level manually, if low, top up with correct specification oil to correct level, if high seem assistance to have drained."));
+        listContact.add(new RCVItem(R.drawable.warning_symbol_in_orange_1,"Warning","Indicates a warning","Navigate the cars onboard computer / information system to identify the fault and address accordingly."));
+        listContact.add(new RCVItem(R.drawable.side_air_bag_symbol_in_orange,"Side air bag","Indicates a fault with the side air bag.","Seek assistance / diagnosis to ensure airbag system is fully functional as it provides a vital part of the cars safety features."));
+        // so far 2 lines.
     }
 }
