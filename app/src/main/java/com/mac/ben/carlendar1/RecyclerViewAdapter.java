@@ -3,7 +3,6 @@ package com.mac.ben.carlendar1;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
@@ -11,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -32,7 +30,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             case 1: mColor = R.color.colorRed; break;
             case 2: mColor = R.color.colorYellow; break;
             case 3: mColor = R.color.colorGreen; break;
-                default: mColor = R.color.colorGray; break;
+                default: mColor = R.color.appBrown; break;
         }
 
     }

@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorRed">#CB8B1313</color>
-    <color name="colorYellow">#F3E415</color>
-    <color name="colorGreen">#1BA81C</color>
+    <color name="colorRed">#808B1313</color>
+    <color name="colorYellow">#80D8C100</color>
+    <color name="colorGreen">#8025D827</color>
     <color name="colorGray">#616161</color>
     <color name="colorBlack">#000000</color>
-    <color name="colorBackground">#E8EBE4BA</color>
+
     <color name="colorLightGray">#C9C9C9</color>
+    <color name="colorLightGreen">#9CD15F</color>
 
-    <color name="colorButton">#EBDA6E</color>
-    <color name="colorButtonPressed">#9CD15F</color>
-    <color name="colorButtonText">#000000</color>
-    <color name="colorSpinner">#BFF5B868</color>
-
-
+    <color name="appYellow">#EBDA6E</color>
+    <color name="appBrownTransparent">#BFF5B868</color>
+    <color name="appBrown">#CA8D3B</color>
 
     <color name="colorTransparent">#00FFFFFF</color>
     <color name="colorGrayTransparent">#BF616161</color>
-    <color name="colorWhiteTransparent">#80FFFFFF</color>
-    <color name="colorSettingsTransparent">#00FFFFFF</color>
 </resources>
