@@ -30,8 +30,10 @@ public class FragmentDatePicker extends DialogFragment {
                     Toast.makeText(getActivity(), "selected date is " + view.getYear() +
                             " / " + (view.getMonth()+1) +
                             " / " + view.getDayOfMonth(), Toast.LENGTH_SHORT).show();
+
                 }
             };
 
+    
     // in the future, create template to fill tires/oil/etc... allow him an option to select a template to a specific date.
 }

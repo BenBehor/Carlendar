@@ -30,11 +30,9 @@ public class MainActivity extends AppCompatActivity{
     ProgressBar progressBar;
     ImageView logoImage;
     RelativeLayout mainLayout;
-    Button dashboardBtn;
     ImageButton settingsBtn;
     Spinner spinnerVideos;
-    Button calendarBtn;
-    Button storeBtn;
+    Button calendarBtn, storeBtn, dashboardBtn;
     VideoManager videoManager;
     String[] spinnerString;
 

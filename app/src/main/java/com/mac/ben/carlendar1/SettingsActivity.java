@@ -17,16 +17,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    Spinner backgroundSpinner;
-    int backgroundSelected;
-    int carModule;
-    Button applySettingsBtn;
-    Button privacyPolicyBtn;
+    Spinner backgroundSpinner,carModuleSpinner;
+    int backgroundSelected,carModule;
+    Button applySettingsBtn, privacyPolicyBtn;
     SharedPreferences preferences;
     ToggleButton notificationsToggleBtn;
-    RadioButton defaultTextRadioBtn;
-    RadioButton largeTextRadioBtn;
-    Spinner carModuleSpinner;
+    RadioButton defaultTextRadioBtn, largeTextRadioBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
