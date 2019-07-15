@@ -30,7 +30,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             case 1: mColor = R.color.colorRed; break;
             case 2: mColor = R.color.colorYellow; break;
             case 3: mColor = R.color.colorGreen; break;
-                default: mColor = R.color.appBrown; break;
+                default: mColor = R.color.appYellowTransparent; break;
         }
 
     }

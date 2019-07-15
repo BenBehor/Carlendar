@@ -3,8 +3,6 @@ package com.mac.ben.carlendar1;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationUtils;
@@ -26,16 +24,17 @@ import androidx.fragment.app.DialogFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-     VideoView videoView;
-     ProgressBar videoLoadingBar;
-     ImageView logoImage;
-     RelativeLayout mainLayout;
-     static SettingsManager settingsManager;
-     Button dashboardBtn;
-     ImageButton settingsBtn;
-     Spinner spinnerVideos;
-     Button calendarBtn;
-     Button storeBtn;
+    VideoView videoView;
+    ProgressBar progressBar;
+    ImageView logoImage;
+    RelativeLayout mainLayout;
+    static SettingsManager settingsManager;
+    Button dashboardBtn;
+    ImageButton settingsBtn;
+    Spinner spinnerVideos;
+    Button calendarBtn;
+    Button storeBtn;
+    VideoManager videoManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,15 +44,13 @@ public class MainActivity extends AppCompatActivity {
         initViews();
 
 
-
-
         if (!checkIfAlreadyhavePermission()) {
             requestForSpecificPermission();
         }
 
         settingsManager.getAppSettings();
 
-        String[] question1 = {"What do you like to know:", "Check Oil levels", "All about Tire pressure" , "Why is my Air Conditioner low?", "Is my Battery dieing?", "Starting issues", "Prevent Overheating", "Dealing with Overheating", "A Burning smell?", "Why are dashboard lights on?"};
+        String[] question1 = {"What do you like to know:", "Check Oil levels", "All about Tire pressure", "Why is my Air Conditioner low?", "Is my Battery dieing?", "Starting issues", "Prevent Overheating", "Dealing with Overheating", "A Burning smell?", "Why are dashboard lights on?"};
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, question1);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -62,47 +59,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
-                if (position != 0) {
-                    String path = "";
-                    videoLoadingBar.setVisibility(View.VISIBLE);
-                    videoView.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,R.anim.bounce));
-                    switch (position) {
-                        case 1: path = getString(R.string.vid1);break;
-                        case 2: path = getString(R.string.vid2);break;
-                        case 3: path = getString(R.string.vid3);break;
-                        case 4: path = getString(R.string.vid4);break;
-                        case 5: path = getString(R.string.vid5);break;
-                        case 6: path = getString(R.string.vid6);break;
-                        case 7: path = getString(R.string.vid7);break;
-                        case 8: path = getString(R.string.vid8);break;
-                        case 9: path = getString(R.string.vid9);break;
-                        default: break;
-                    }
-                    Uri uri = Uri.parse(path);
-                    videoView.setVisibility(View.VISIBLE);
-                    videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                        @Override
-                        public void onPrepared(MediaPlayer mediaPlayer) { videoLoadingBar.setVisibility(View.INVISIBLE); }});
-                    videoView.setVideoURI(uri);
-                    videoView.requestFocus();
-                    videoView.start();
-                    videoView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            if (videoView.isPlaying()) {
-                                videoView.pause();
-                            } else {
-                                videoView.start();
 
-                            }
-                        }
-                    });
-                    videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mediaPlayer) {
-                        }}); } }
+                videoManager.playVideo(position);
+
+            }
+
             @Override
-            public void onNothingSelected(AdapterView<?> parentView) { }
+            public void onNothingSelected(AdapterView<?> parentView) {
+            }
         });
 
         dashboardBtn.setOnClickListener(new View.OnClickListener() {
@@ -116,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-                v.startAnimation(AnimationUtils.loadAnimation(MainActivity.this,R.anim.spin));
+                v.startAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.spin));
             }
         });
 
@@ -136,17 +100,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        videoView = findViewById(R.id.video_view);
-        videoLoadingBar = findViewById(R.id.video_progressbar);
-        logoImage =  findViewById(R.id.car_module_iv);
+        logoImage = findViewById(R.id.car_module_iv);
         mainLayout = findViewById(R.id.main_layout);
         settingsManager = new SettingsManager(this);
         dashboardBtn = findViewById(R.id.dashboard_btn);
         settingsBtn = findViewById(R.id.settings_btn);
-        videoView.setVisibility(View.INVISIBLE);
         spinnerVideos = findViewById(R.id.spinner_videos);
         calendarBtn = findViewById(R.id.calendar_btn);
         storeBtn = findViewById(R.id.store_btn);
+        progressBar = findViewById(R.id.video_progressbar);
+        videoView = findViewById(R.id.video_view);
+        videoManager = new VideoManager(this, videoView, progressBar);
 
     }
 
@@ -158,21 +122,13 @@ public class MainActivity extends AppCompatActivity {
     private void requestForSpecificPermission() {
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.GET_ACCOUNTS, Manifest.permission.RECEIVE_SMS, Manifest.permission.READ_SMS, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 101);
     }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        if(requestCode == 101){
+        if (requestCode == 101) {
             if (grantResults[0] != PackageManager.PERMISSION_GRANTED) {
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
             } // if user deny he won't be able to Download car logo. it will ask again the next time he opens the app.
         }
-    }
-
-
-    public ImageView getImageView(){
-        return this.logoImage;
-    }
-
-    public RelativeLayout getMainlayout(){
-        return this.mainLayout;
     }
 }

@@ -10,8 +10,9 @@
     <color name="colorLightGreen">#9CD15F</color>
 
     <color name="appYellow">#EBDA6E</color>
-    <color name="appBrownTransparent">#BFF5B868</color>
-    <color name="appBrown">#CA8D3B</color>
+    <color name="appYellowTransparent">#CCEBDA6E</color>
+    <color name="appBrownTransparent">#CCDD9D48</color>
+    <color name="appBrown">#DD9D48</color>
 
     <color name="colorTransparent">#00FFFFFF</color>
     <color name="colorGrayTransparent">#BF616161</color>

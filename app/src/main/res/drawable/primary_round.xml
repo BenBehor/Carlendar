@@ -4,7 +4,8 @@
     <item>
         <shape>
             <corners android:radius="6dp" />
-            <solid android:color="@color/appYellow" />
+            <gradient android:startColor="@color/appYellow" android:endColor="@color/appBrown" android:angle="90" />
+
         </shape>
     </item>
 </ripple>
