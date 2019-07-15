@@ -22,48 +22,43 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
+
+    static SettingsManager settingsManager;
     VideoView videoView;
     ProgressBar progressBar;
     ImageView logoImage;
     RelativeLayout mainLayout;
-    static SettingsManager settingsManager;
     Button dashboardBtn;
     ImageButton settingsBtn;
     Spinner spinnerVideos;
     Button calendarBtn;
     Button storeBtn;
     VideoManager videoManager;
+    String[] spinnerString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        initViews();
+        init();
 
-
-        if (!checkIfAlreadyhavePermission()) {
-            requestForSpecificPermission();
-        }
+        if (!checkIfAlreadyhavePermission()) { requestForSpecificPermission(); }
 
         settingsManager.getAppSettings();
 
-        String[] question1 = {"What do you like to know:", "Check Oil levels", "All about Tire pressure", "Why is my Air Conditioner low?", "Is my Battery dieing?", "Starting issues", "Prevent Overheating", "Dealing with Overheating", "A Burning smell?", "Why are dashboard lights on?"};
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, question1);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, spinnerString);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerVideos.setAdapter(adapter);
         spinnerVideos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-
-
                 videoManager.playVideo(position);
-
             }
-
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
             }
@@ -99,7 +94,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void initViews() {
+
+
+
+
+    private void init() {
         logoImage = findViewById(R.id.car_module_iv);
         mainLayout = findViewById(R.id.main_layout);
         settingsManager = new SettingsManager(this);
@@ -111,8 +110,11 @@ public class MainActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.video_progressbar);
         videoView = findViewById(R.id.video_view);
         videoManager = new VideoManager(this, videoView, progressBar);
+        spinnerString = new String[]{"What do you like to know:", "Check Oil levels", "All about Tire pressure", "Why is my Air Conditioner low?", "Is my Battery dieing?", "Starting issues", "Prevent Overheating", "Dealing with Overheating", "A Burning smell?", "Why are dashboard lights on?"};
 
     }
+
+
 
     private boolean checkIfAlreadyhavePermission() {
         int result = ContextCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS);
