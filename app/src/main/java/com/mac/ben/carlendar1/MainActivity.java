@@ -22,7 +22,7 @@ import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
 
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
 
     static SettingsManager settingsManager;
@@ -41,14 +41,53 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        init();
+        initViews();
+        initVideoSpinner();
 
         if (!checkIfAlreadyhavePermission()) { requestForSpecificPermission(); }
 
         settingsManager.getAppSettings();
 
+        dashboardBtn.setOnClickListener(this);
+        settingsBtn.setOnClickListener(this);
+        calendarBtn.setOnClickListener(this);
+        storeBtn.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view == dashboardBtn) {
+            startActivity(new Intent(MainActivity.this, DashboardLightActivity.class)); }
+        if (view == settingsBtn){
+            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+            view.startAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.spin)); }
+        if (view == calendarBtn){
+            DialogFragment newFragment = new FragmentDatePicker();
+            newFragment.show(getSupportFragmentManager(), "date picker"); }
+        if (view == storeBtn){
+            startActivity(new Intent(MainActivity.this, StoreActivity.class)); }
+    }
 
 
+
+    private void initViews() {
+        logoImage = findViewById(R.id.car_module_iv);
+        mainLayout = findViewById(R.id.main_layout);
+        settingsManager = new SettingsManager(this);
+        dashboardBtn = findViewById(R.id.dashboard_btn);
+        settingsBtn = findViewById(R.id.settings_btn);
+        spinnerVideos = findViewById(R.id.spinner_videos);
+        calendarBtn = findViewById(R.id.calendar_btn);
+        storeBtn = findViewById(R.id.store_btn);
+        progressBar = findViewById(R.id.video_progressbar);
+        videoView = findViewById(R.id.video_view);
+        videoManager = new VideoManager(this, videoView, progressBar);
+
+    }
+
+    private void initVideoSpinner() {
+        spinnerString = new String[]{"What do you like to know:", "Check Oil levels", "All about Tire pressure", "Why is my Air Conditioner low?", "Is my Battery dieing?", "Starting issues", "Prevent Overheating", "Dealing with Overheating", "A Burning smell?", "Why are dashboard lights on?"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, spinnerString);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerVideos.setAdapter(adapter);
@@ -61,57 +100,7 @@ public class MainActivity extends AppCompatActivity{
             public void onNothingSelected(AdapterView<?> parentView) {
             }
         });
-
-        dashboardBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, DashboardLightActivity.class));
-            }
-        });
-
-        settingsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, SettingsActivity.class));
-                v.startAnimation(AnimationUtils.loadAnimation(MainActivity.this, R.anim.spin));
-            }
-        });
-
-        calendarBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DialogFragment newFragment = new FragmentDatePicker();
-                newFragment.show(getSupportFragmentManager(), "date picker");
-            }
-        });
-        storeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, StoreActivity.class));
-            }
-        });
     }
-
-
-
-
-
-    private void init() {
-        logoImage = findViewById(R.id.car_module_iv);
-        mainLayout = findViewById(R.id.main_layout);
-        settingsManager = new SettingsManager(this);
-        dashboardBtn = findViewById(R.id.dashboard_btn);
-        settingsBtn = findViewById(R.id.settings_btn);
-        spinnerVideos = findViewById(R.id.spinner_videos);
-        calendarBtn = findViewById(R.id.calendar_btn);
-        storeBtn = findViewById(R.id.store_btn);
-        progressBar = findViewById(R.id.video_progressbar);
-        videoView = findViewById(R.id.video_view);
-        videoManager = new VideoManager(this, videoView, progressBar);
-        spinnerString = new String[]{"What do you like to know:", "Check Oil levels", "All about Tire pressure", "Why is my Air Conditioner low?", "Is my Battery dieing?", "Starting issues", "Prevent Overheating", "Dealing with Overheating", "A Burning smell?", "Why are dashboard lights on?"};
-
-    }
-
 
 
     private boolean checkIfAlreadyhavePermission() {
